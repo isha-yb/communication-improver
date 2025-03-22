@@ -43,12 +43,12 @@
     <div class="testimonials" id="testimonials">
         <h2>What Our Users Say</h2>
         <div class="testimonial-slider">
-            <div class="testimonial">“This app transformed my presentations! The feedback is incredibly helpful.” ★★★★☆</div>
-            <div class="testimonial">“SpeakSmart Coach helped me conquer my fear of public speaking.” ★★★★★</div>
-            <div class="testimonial">“Personalized learning paths are a game-changer. Highly recommend!” ★★★★☆</div>
-            <div class="testimonial">“The real-time analysis helped me perfect my tone and delivery.” ★★★★★</div>
-            <div class="testimonial">“A must-have tool for anyone preparing for interviews or speeches.” ★★★★☆</div>
-        </div>
+            <div class="testimonial">“This app transformed my presentations! The feedback is incredibly helpful.” <span class="stars">★★★★☆</span></div>
+            <div class="testimonial">“SpeakSmart Coach helped me conquer my fear of public speaking.” <span class="stars">★★★★★</span></div>
+            <div class="testimonial">“Personalized learning paths are a game-changer. Highly recommend!” <span class="stars">★★★★☆</span></div>
+            <div class="testimonial">“The real-time analysis helped me perfect my tone and delivery.” <span class="stars">★★★★★</span></div>
+            <div class="testimonial">“A must-have tool for anyone preparing for interviews or speeches.” <span class="stars">★★★★☆</span></div>
+        </div>        
     </div>
 
     <div class="footer" id="contact">
@@ -57,18 +57,19 @@
     </div>
 
     <script>
-        const slider = document.querySelector('.testimonial-slider');
-        let scrollAmount = 0;
+            const slider = document.querySelector('.testimonial-slider');
+            let scrollAmount = 0;
 
-        setInterval(() => {
-            if (scrollAmount <= slider.scrollWidth - slider.clientWidth) {
-                slider.scrollBy({ left: 1, behavior: 'smooth' });
+            function scrollTestimonials() {
                 scrollAmount++;
-            } else {
-                slider.scrollTo({ left: 0, behavior: 'smooth' });
-                scrollAmount = 0;
+                if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+                    scrollAmount = 0;  // Reset scroll position
+                }
+                slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
             }
-        }, 20);
+
+    setInterval(scrollTestimonials, 20);
+
     </script>
 </body>
 </html>
