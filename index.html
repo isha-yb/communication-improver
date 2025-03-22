@@ -11,36 +11,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>SpeakSmart Coach</h1>
-            <p>Master your communication skills with AI-powered, real-time feedback.</p>
-            <button class="button">Get Started</button>
-        </div>
-
-        <div class="features">
-            <div class="card">
-                <h2>Live Speech Practice</h2>
-                <p>Practice speeches with real-time analysis on grammar, tone, and persuasiveness.</p>
-            </div>
-            <div class="card">
-                <h2>Contextual Feedback</h2>
-                <p>Receive tailored feedback based on your specific speaking context.</p>
-            </div>
-            <div class="card">
-                <h2>Personalized Learning</h2>
-                <p>Track progress and improve through AI-adaptive learning paths.</p>
-            </div>
-        </div>
-
-        <div class="benefits">
-            <h2>Why Choose SpeakSmart Coach?</h2>
-            <p>Enhance your communication skills with domain-specific advice and gamified challenges.</p>
-        </div>
-
-        <div class="cta">
-            <button class="button">Join Now</button>
+    <div class="navbar">
+        <div class="logo">SpeakSmart</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#why-choose">Why Choose Us</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
+
+    <div class="hero" id="home">
+        <h1>Master Your Communication Skills</h1>
+        <p>AI-powered, real-time feedback to enhance your speaking prowess.</p>
+        <button class="cta-button">Join Now</button>
+    </div>
+
+    <div class="features" id="features">
+        <div class="feature-card">Live Speech Practice</div>
+        <div class="feature-card">Contextual Feedback</div>
+        <div class="feature-card">Personalized Learning</div>
+    </div>
+
+    <div class="why-choose" id="why-choose">
+        <h2>Why Choose SpeakSmart Coach?</h2>
+        <p>Enhance your communication skills with domain-specific advice and gamified challenges. Our platform offers engaging and interactive ways to improve your public speaking, ensuring you gain confidence and expertise in various communication settings.</p>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials" id="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">“This app transformed my presentations! The feedback is incredibly helpful.” ★★★★☆</div>
+            <div class="testimonial">“SpeakSmart Coach helped me conquer my fear of public speaking.” ★★★★★</div>
+            <div class="testimonial">“Personalized learning paths are a game-changer. Highly recommend!” ★★★★☆</div>
+            <div class="testimonial">“The real-time analysis helped me perfect my tone and delivery.” ★★★★★</div>
+            <div class="testimonial">“A must-have tool for anyone preparing for interviews or speeches.” ★★★★☆</div>
+        </div>
+    </div>
+
+    <div class="footer" id="contact">
+        <div>About Us &nbsp; | &nbsp; Careers &nbsp; | &nbsp; Privacy Policy &nbsp; | &nbsp; Terms of Service</div>
+        <p>© 2025 SpeakSmart Coach. All rights reserved.</p>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.testimonial-slider');
+        let scrollAmount = 0;
+
+        setInterval(() => {
+            if (scrollAmount <= slider.scrollWidth - slider.clientWidth) {
+                slider.scrollBy({ left: 1, behavior: 'smooth' });
+                scrollAmount++;
+            } else {
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+                scrollAmount = 0;
+            }
+        }, 20);
+    </script>
 </body>
 </html>
