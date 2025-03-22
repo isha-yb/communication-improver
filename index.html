@@ -56,33 +56,20 @@
         <p>© 2025 SpeakSmart Coach. All rights reserved.</p>
     </div>
 
-    <!-- Add this HTML for Left & Right Arrows -->
-    <div class="testimonial-slider-container">
-        <button class="arrow left-arrow">&#9664;</button>
-        <div class="testimonial-slider">
-            <div class="testimonial">“This app transformed my presentations! The feedback is incredibly helpful.” <span class="stars">★★★★☆</span></div>
-            <div class="testimonial">“SpeakSmart Coach helped me conquer my fear of public speaking.” <span class="stars">★★★★★</span></div>
-            <div class="testimonial">“Personalized learning paths are a game-changer. Highly recommend!” <span class="stars">★★★★☆</span></div>
-            <div class="testimonial">“The real-time analysis helped me perfect my tone and delivery.” <span class="stars">★★★★★</span></div>
-            <div class="testimonial">“A must-have tool for anyone preparing for interviews or speeches.” <span class="stars">★★★★☆</span></div>
-        </div>
-        <button class="arrow right-arrow">&#9654;</button>
-    </div>
-
     <script>
-        const slider = document.querySelector('.testimonial-slider');
-        const leftArrow = document.querySelector('.left-arrow');
-        const rightArrow = document.querySelector('.right-arrow');
-        const scrollStep = 300; // Adjust scroll step as desired
+            const slider = document.querySelector('.testimonial-slider');
+            let scrollAmount = 0;
 
-        rightArrow.addEventListener('click', () => {
-            slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
-        });
+            function scrollTestimonials() {
+                scrollAmount++;
+                if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+                    scrollAmount = 0;  // Reset scroll position
+                }
+                slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            }
 
-        leftArrow.addEventListener('click', () => {
-            slider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-        });
+    setInterval(scrollTestimonials, 20);
+
     </script>
-
 </body>
 </html>
